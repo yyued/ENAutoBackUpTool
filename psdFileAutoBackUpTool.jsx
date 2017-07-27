@@ -42,6 +42,7 @@ if(currentFile.displayName == "errnull_ps_auto_backup.jsx"){
     }
     currentFile.copy(destinationPath);
     try {
+        app.notifiersEnabled = true;
         app.notifiers.add("save", File(destinationPath));
     }catch (e){}
     alert("安装成功...");
