@@ -21,21 +21,19 @@ function copyPsdFileToTempFold() {
         var saveOptions = new PhotoshopSaveOptions();
         app.activeDocument.saveAs(newFile, saveOptions, true, Extension.LOWERCASE);
 
-        var ddd = new File(app.activeDocument.path + interval + finalFileName);
-        if (ddd.exists){
-            ddd.remove();
+        var finalFile = new File(app.activeDocument.path + interval + finalFileName);
+        if (finalFile.exists){
+            finalFile.remove();
         }
         newFile.rename(finalFileName);
     }
 }
-
 
 if(currentFile.displayName == "errnull_ps_auto_backup.jsx"){
 
     copyPsdFileToTempFold();
 
 }else{
-
 
     var destinationPath = app.path + "/errnull_ps_auto_backup.jsx";
     if (!isMacOS){
